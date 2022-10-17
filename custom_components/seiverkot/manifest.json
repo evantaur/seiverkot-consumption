@@ -3,7 +3,7 @@
   "name": "Seiverkot",
   "documentation": "https://github.com/home-assistant/example-custom-config/tree/master/custom_components/example_sensor/",
   "dependencies": [],
-  "codeowners": ["Evantaur"],
+  "codeowners": ["@evantaur"],
   "requirements": [],
   "iot_class": "cloud_polling",
   "version": "0.1.0"
