@@ -1,7 +1,8 @@
 {
   "domain": "seiverkot",
   "name": "Seiverkot",
-  "documentation": "https://github.com/home-assistant/example-custom-config/tree/master/custom_components/example_sensor/",
+  "documentation": "https://github.com/evantaur/seiverkot-consumption",
+  "issue_tracker": "https://github.com/evantaur/seiverkot-consumption/issues",
   "dependencies": [],
   "codeowners": ["@evantaur"],
   "requirements": [],
