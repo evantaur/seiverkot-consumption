@@ -39,7 +39,7 @@ import time
 
 SEI={"username":"","password":"","contractNum":0}
 #SCAN_INTERVAL = datetime.timedelta(hours=4)
-SCAN_INTERVAL = datetime.timedelta(hours=1)
+SCAN_INTERVAL = datetime.timedelta(hours=2)
 def setup_platform(
     hass: HomeAssistant,
     config: ConfigType,
@@ -60,6 +60,7 @@ def setup_platform(
 
 
 def seiverkot(username,password,contractNo=1,login=False):
+    ''' Fetch data'''
     s = requests.Session()
     epoch = int(time.time()*1000)
     result = {}
@@ -87,6 +88,8 @@ def seiverkot(username,password,contractNo=1,login=False):
     'contractNo' : contractNo,
     'resolution' : 'Year',
     'random' : random(),
+    'fromTimeAsUnixTimestamp' : 1640988000000,
+    'toTimeasUnixTimestamp' : epoch,
     'view' : None,
     '__RequestVerificationToken' : result['RequestVerificationToken']
     }
@@ -121,7 +124,8 @@ class ConsumptionSensor(SensorEntity):
         username = SEI["username"]
         password = SEI["password"]
         data = seiverkot(username,password,uid)
-        #use cached value to avoid wonky sensor readings
-        cons = data["consumption"] if not self._attr_native_value else max(data["consumption"],self._attr_native_value)
+        if not data:
+            return
+        cons = data["consumption"]
         self._attr_native_value = cons
 
