@@ -39,7 +39,7 @@ import time
 
 SEI={"username":"","password":"","contractNum":0}
 #SCAN_INTERVAL = datetime.timedelta(hours=4)
-SCAN_INTERVAL = datetime.timedelta(hours=2)
+SCAN_INTERVAL = datetime.timedelta(hours=4)
 def setup_platform(
     hass: HomeAssistant,
     config: ConfigType,
@@ -100,8 +100,8 @@ def seiverkot(username,password,contractNo=1,login=False):
     p = s.get(f"https://asiakasweb.seiverkot.fi/Enoro.Standard/Consumption/GetHourPrices?contractNo={contractNo}&fromTimeAsUnixTimestamp={epoch - 129600000}&toTimeAsUnixTimestamp={epoch}&random={random}").json() # get price
     price=json.loads(p["data"])
     template["price"]["price"] = (price[0]/100)
-    return template
     r = s.get('https://asiakasweb.seiverkot.fi/Users/Account/LogOff?ReturnUrl=%2F') # Log out
+    return template
 
 
 
