@@ -15,6 +15,6 @@ käyttöohje:
 ```
 sensor:
   platform: seiverkot
-  user: <your email>
+  username: <your email>
   password: <your password>
 ```
