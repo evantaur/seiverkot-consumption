@@ -160,7 +160,7 @@ class econsumption:
         }
         consumption = self.session.post(url, data=data)
         parse = BS(consumption.text, 'lxml')
-        self.consumption = parse.find('table').findAll('td')[-1].getText()
+        self.consumption = float(parse.find('table').findAll('td')[-1].getText().replace(",","."))
         return self.consumption
 
     @staticmethod
@@ -273,7 +273,7 @@ class CombinedPrice(SensorEntity):
              "combined_consumption": "Combined consumption fees"}
         self._attr_name = f"{d[priceType]} ({users[0].serviceName})"
         self._attr_native_unit_of_measurement = \
-            "EUR/kWh" if priceType != "combined_consumption" else "EUR/kk"
+            "EUR/kWh" if priceType == "combined_consumption" else "EUR/kk"
         self.users = users
         self.priceType = priceType
         self.SCAN_INTERVAL = datetime.timedelta(hours=24)
@@ -372,8 +372,8 @@ class ConsumptionSensor(SensorEntity):
     def __init__(self, user):
         self._attr_name = f"Energy consumption ({user.serviceName})"
         self._attr_native_unit_of_measurement = "kWh"
-        self._attr_device_class = SensorDeviceClass.ENERGY
-        self._attr_state_class = SensorStateClass.TOTAL_INCREASING
+        self._attr_device_class = "energy"
+        self._attr_state_class = "total_increasing"
         self.user = user
 
     def update(self) -> None:
