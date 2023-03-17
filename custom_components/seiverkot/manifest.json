@@ -1,11 +1,13 @@
 {
   "domain": "seiverkot",
   "name": "Seiverkot",
-  "documentation": "https://github.com/evantaur/seiverkot-consumption",
-  "issue_tracker": "https://github.com/evantaur/seiverkot-consumption/issues",
+  "codeowners": [
+    "@evantaur"
+  ],
   "dependencies": [],
-  "codeowners": ["@evantaur"],
-  "requirements": [],
+  "documentation": "https://github.com/evantaur/seiverkot-consumption",
   "iot_class": "cloud_polling",
-  "version": "0.1.0"
+  "issue_tracker": "https://github.com/evantaur/seiverkot-consumption/issues",
+  "requirements": [],
+  "version": "0.1.1"
 }
