@@ -11,10 +11,10 @@ Tämä liitännäinen tarjoaa seuraavat sensorit:
 - Sähkönkulutus
 - Siirtomaksun hinta
 - Sähkön hinta
-- Sähkönsiirron kuukausimaksu
-- Sähkönkulutuksen kuukausimaksu
+- Sähkönsiirron perusmaksu
+- Sähkönkulutuksen perusmaksu
 - Siirtomaksun ja sähkön hinnan summa
-- Kuukausimaksujen summa
+- Perusmaksujen summa
 
 
 ## Seurantapalvelun käyttö edellyttää Seiverkot ja/tai Seinäjoen Energian tiliä.
