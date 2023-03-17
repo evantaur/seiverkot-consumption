@@ -3,6 +3,9 @@
 # seiverkot-consumption
 Lisää Seiverkot/Seinäjoen Energian kulutusseuranta Home Assistanttiin.
 
+![2023-03-17 03 47 01 localhost cbc3f24a1538](https://user-images.githubusercontent.com/23665282/225792017-25456018-5176-4390-90cf-8ad027e7aafe.png)
+![2023-03-17 03 47 35 localhost 108f510c30d6](https://user-images.githubusercontent.com/23665282/225791963-4058c2b7-617a-48bb-ae16-d63e8ddf7e43.png)
+
 Tämä liitännäinen tarjoaa seuraavat sensorit:
 
 - Sähkönkulutus
@@ -21,7 +24,7 @@ Tämä liitännäinen tarjoaa seuraavat sensorit:
 
 [**Seinäjoen energia**](https://asiakasweb.sen.fi/)
 
-![image](https://user-images.githubusercontent.com/23665282/201277935-b2ff3da4-c578-4003-8301-5e64e0d37a93.png)
+
 
 
 ### Käyttöohje:
