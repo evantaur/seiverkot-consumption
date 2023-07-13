@@ -3,7 +3,7 @@ from __future__ import annotations
 from bs4 import BeautifulSoup as BS
 from json import dumps as dumps
 from time import time
-
+from os import path as P
 import logging
 import voluptuous as vol
 
@@ -28,8 +28,10 @@ from random import random
 import datetime
 import requests
 
-_LOGGER = logging.getLogger(__name__)
+''' get path of the manually imported certificate '''
+CERT = f"{P.dirname(P.realpath(__file__))}/cert.pub"
 
+_LOGGER = logging.getLogger(__name__)
 CONF_CONTRACTNO = "contractNumber"
 CONF_NAME = "name"
 CONF_SERVICE = "service"
@@ -72,6 +74,7 @@ class econsumption:
         self.password = password
         self.user = False
         self.session = requests.Session()
+        self.session.verify = CERT
         self.consumption = 0
         self.unit_of_measurement = "kWh"
         self.token = None
